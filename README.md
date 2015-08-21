@@ -34,3 +34,4 @@ It would be nice to have following things aswell
 * In addition to javascript testing jshint would be nice
 * ES6 support trough babel
 * A yeoman generator to scaffold all of the code
+* Deployment of some kind, heroku or similar
