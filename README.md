@@ -1,4 +1,4 @@
-# full-platform-boilerplate
+# Platform boilerplate
 
 ### Idear
 To have 1 boilerplate that can build your app and run it any ware possible. You should only need this boilerplate if you want to run a MEAN stack.
