@@ -35,3 +35,17 @@ It would be nice to have following things aswell
 * ES6 support trough babel
 * A yeoman generator to scaffold all of the code
 * Deployment of some kind, i would love to use docker containers for this
+
+### Deployment Setup 
+I think this would be a nice setup please contribute in the issues section if you have suggestions - i would love to use docker containers for scalability.
+
+* Docker(Container1)     
+	* Mongodb      
+* Docker(Container2) 
+	* Node server
+* Docker(Container3)
+	* Frontend/Angular
+* Ionic(Android/iOS/WindowsPhone)
+	* Frontend/Angular
+* NW(Windows/OS X/Linus)
+	* Frontend/Angular
