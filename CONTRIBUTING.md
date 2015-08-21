@@ -67,7 +67,6 @@ This repository follows [johnpapa][3] guide lines and convention. Because this c
 #### SASS/CSS
 This repository uses BEM syntax for all its css/sass naming for classes since it does provide trasnparency and useful meaning to other developers.
 
-##### Examples
 ###### Naming convention
 ```
 .site-search {}
@@ -75,20 +74,156 @@ This repository uses BEM syntax for all its css/sass naming for classes since it
 .site-search--full {}
 
 ```
-- .site represents the higher level of an abstraction or component.
-- .site__element represents a descendent of .site that helps form .site as a whole.
-- .site--modifier represents a different state or version of .site.
+- **.site** represents the higher level of an abstraction or component.
+- **.site__element** represents a descendent of **.site** that helps form .site as a whole.
+- **.site--modifier** represents a different state or version of **.site**.
+
+The point of BEM is to tell developers more about what a piece of markup is doing from its name alone. For example:
+
+```
+.person {}
+.person__hand {}
+.person--female {}
+.person--male {}
+.person--female__hand {}
+.person__hand--left {}
+
+```
+The top level block is a *person* which has elements such as *hand*. This person can has variations such *male/female*.
+[learn more here][4]
 
 
+#### Node.js
+##### Basic rules of life
+- No trailing whitespaces
+- 80 characters per line
+- Use 1 tab for indeting... DO NOT mix tab and spaces
+- Use Semicolons
+
+##### Rules with Example
+###### Use single quotes
+Always use single qoutes, unless is JSON ;) 
+
+Right:
+
+```
+var foo = 'bar';
+
+```
+###### Braces go on the same line
+Place opening braces always in the same line
+
+```
+if(you_are_amazing){
+	console.log('yes you are!');
+}
+
+```
+
+###### Method Chaining
+One method per line while chaining methods please 
+
+```
+User
+  .findOne({ name: 'foo' })
+  .populate('bar')
+  .exec(function(err, user) {
+    return true;
+  });
+
+```
+ 
+###### Declaring multiple
+Always declare one variable per statement
+
+```
+var cph = ['foo', 'bar'];
+var val = [22, 11];
+var obj = {};
+
+```
+###### Use lowerCamelCase for var, properties and function names
+Variables, properties and function names should use lowerCamelCase. They should be descriptive and try to avoid uncommon abbreviations. 
+
+```
+var superAdminUser = db.query(".... ");
+
+```
 
 
+###### Use UpperCamelCase for classes
+Class names should use UpperCamelCase
+
+```
+function BankController(){
+	
+}
+```
+
+###### UPPERCASE for constants
+Contants should always be Uppercase
+
+```
+var THIS_REPO_WILL_BE_GREAT = true;
+
+```
+
+###### Objects and Arrays
+Use trailing commans and short declarations should be on a single line
+
+```
+var x = ['Hello', 'World'];
+var y = {
+	example: true,
+	'general': true,
+	'time' : '20151027'	
+};
+
+```
+###### Use the right comparison operator
+Use *===* to insure a strict equality
+
+```
+var x = 0;
+if(x !== ''){
+	console.log("game over");
+}
+
+```
+###### Use descriptive conditions
+Any non-trivial conditions should be assigned to a descriptively named variable
+
+``` 
+var isValidPassword = password.length >= 4 && /^(?=.*\d).{4,}$/.test(password);
+
+if (isValidPassword) {
+  console.log('valid password');
+}
+
+```
+
+###### Commenting 
+Use slashes for both single line and multi line comments. Try to write comments that exmplain or clarify difficult parts of your code.
+
+```
+// Get some really strong password
+var matches = password.match(^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$);
+
+// This function has a failure while
+// handling some non exisitng user
+function changeUserPassword(id, password){
+	
+}
+
+``` 
 
 
-### Copyright
+Copyright
+----------------
 
 Copyright (c) 2015 [sp90](http://www.nomis.dk/)
 
-### (The MIT License)
+###### (The MIT License)
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
 'Software'), to deal in the Software without restriction, including
@@ -114,3 +249,5 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  [1]: https://github.com/sp90/platform-boilerplate
  [2]: https://github.com/sp90/platform-boilerplate/issues
  [3]: https://github.com/johnpapa/angular-styleguide
+ [4]: http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+ [5]: http://stackoverflow.com/questions/523643/difference-between-and-in-javascript
